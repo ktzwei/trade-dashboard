@@ -39,6 +39,16 @@ td.dim{color:var(--dim)}
 th.bat{background:rgba(255,255,255,.03)}
 th.bat span{font-weight:400;text-transform:none;letter-spacing:0;font-size:.54rem;
             opacity:.75}
+.tg{display:none}
+.tglab{display:inline-block;margin:2px 0 0;padding:4px 10px;font-size:.7rem;
+       color:var(--dim);background:var(--card);border:1px solid var(--line);
+       border-radius:999px;cursor:pointer;user-select:none}
+.tglab:hover{color:var(--txt);border-color:#3a3a42}
+.tglab .on{display:none}
+.tg:checked ~ .tglab .off{display:none}
+.tg:checked ~ .tglab .on{display:inline}
+th.bat,td.bat{display:none}
+.tg:checked ~ .twrap th.bat,.tg:checked ~ .twrap td.bat{display:table-cell}
 .card .v .cs{display:block;font-size:.6rem;color:var(--dim);font-weight:400;margin-top:2px;
             letter-spacing:0;text-transform:none}
 .panel{margin:18px 0}
