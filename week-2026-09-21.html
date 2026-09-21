@@ -1,0 +1,81 @@
+<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>09-21当周 · 交易面板</title><style>
+:root{--bg:#0e0e10;--card:#1a1a1e;--line:#26262b;--txt:#e8e8ea;--dim:#8a8a92;
+      --win:#22c55e;--lose:#f43f5e;--be:#9ca3af}
+*{box-sizing:border-box}
+body{font-family:-apple-system,'Segoe UI','PingFang SC',sans-serif;background:var(--bg);
+     color:var(--txt);max-width:860px;margin:0 auto;padding:1.1rem 1rem;line-height:1.45}
+h1{font-size:1.02rem;font-weight:600;margin:.1rem 0 .8rem;letter-spacing:.01em}
+h2{font-size:.88rem;font-weight:600;color:var(--txt);margin-top:1.3rem}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:7px;
+       margin:.8rem 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;
+      padding:9px 11px}
+.card .k{font-size:.58rem;color:var(--dim);text-transform:uppercase;
+         letter-spacing:.06em;font-weight:500}
+.card .v{font-size:.95rem;font-weight:650;margin-top:2px;
+         font-variant-numeric:tabular-nums}
+.pos{color:var(--win)}.neg{color:var(--lose)}.mut{color:var(--be)}
+.twrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;
+       border:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;font-size:.75rem;margin-top:.5rem}
+th{color:var(--dim);text-align:left;padding:7px 10px;font-size:.58rem;
+   text-transform:uppercase;letter-spacing:.06em;font-weight:500;
+   white-space:nowrap;border-bottom:1px solid var(--line)}
+td{padding:7px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+tr:last-child td{border-bottom:none}
+tr.W td{color:var(--win)}
+tr.L td{color:var(--lose)}
+tr.BE td{color:var(--be)}
+tr.OPEN td{color:var(--dim)}
+td .pair{font-weight:600;color:var(--txt)}
+tr.W td .pair{color:var(--win)}
+tr.L td .pair{color:var(--lose)}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums}
+td.dim{color:var(--dim)}
+.pnl{font-weight:650}
+.sub2{display:block;font-size:.63rem;color:var(--dim);font-weight:400;margin-top:1px;
+      letter-spacing:0}
+.bp{font-weight:600}
+th.bat{background:rgba(255,255,255,.03)}
+th.bat span{font-weight:400;text-transform:none;letter-spacing:0;font-size:.54rem;
+            opacity:.75}
+.tg{display:none}
+tbody.trade tr.sub{display:none}
+tbody.trade.open tr.sub{display:table-row}
+tr.main.has-sub{cursor:pointer}
+tr.main td:first-child{position:relative}
+.caret{display:inline-block;width:.8em;color:var(--dim);margin-right:3px;
+       transition:transform .12s ease}
+tbody.trade.open tr.main .caret{transform:rotate(90deg)}
+tr.sub td{color:var(--dim);font-size:.72rem;border-bottom:1px dashed var(--line)}
+tr.sub td.bl{color:var(--txt);font-weight:500}
+.hint{color:var(--dim);opacity:.8}
+.card .v .cs{display:block;font-size:.6rem;color:var(--dim);font-weight:400;margin-top:2px;
+            letter-spacing:0;text-transform:none}
+.panel{margin:18px 0}
+.panel h2{margin:0 0 2px;font-size:.92rem}
+.panel .sub{color:var(--dim);font-size:.72rem;margin:0 0 8px}
+.opennote{color:#d4b45a;font-size:.72rem;margin:6px 0}
+a.back{color:#6ab0f3;text-decoration:none;font-size:.8rem}
+a.back:hover{text-decoration:underline}
+@media(min-width:640px){
+ body{padding:1.8rem 1.2rem}
+ h1{font-size:1.15rem}
+ h2{font-size:.95rem}
+ .cards{grid-template-columns:repeat(6,1fr)}
+ .card .v{font-size:1.02rem}
+ table{font-size:.8rem}
+ th{font-size:.62rem;padding:8px 12px}
+ td{padding:8px 12px}
+}
+</style></head><body><section class="panel"><h2>09-21当周</h2><p class="sub">周净额 <span class="mut">+0.000 USDT</span> (毛 +0.000 · 费 0.0000) · 0 笔 · 胜率 -</p><div class="cards"><div class="card"><div class="k">TOTAL TRADE</div><div class="v ">0</div></div><div class="card"><div class="k">WIN</div><div class="v pos">0</div></div><div class="card"><div class="k">LOSE</div><div class="v neg">0</div></div><div class="card"><div class="k">BE</div><div class="v mut">0</div></div><div class="card"><div class="k">Win Rate (NO BE)</div><div class="v ">-</div></div><div class="card"><div class="k">Win Rate (ALL)</div><div class="v ">-</div></div><div class="card"><div class="k">Total Longs</div><div class="v ">0 · -</div></div><div class="card"><div class="k">Total Shorts</div><div class="v ">0 · -</div></div><div class="card"><div class="k">获利 (USDT) · 净/毛/费</div><div class="v neg">+0.000<span class='cs'>毛 +0.000 · 费 0.0000</span></div></div><div class="card"><div class="k">Average Win (净)</div><div class="v pos">+0.000</div></div><div class="card"><div class="k">Average Loss (净)</div><div class="v neg">+0.000</div></div><div class="card"><div class="k">盈亏比</div><div class="v ">-</div></div></div><p class="opennote">Still Open (持仓中): 1 笔 · 已实现 +0.000 USDT</p><div class='twrap'><table><thead><tr><th>Pair</th><th>L/S</th><th>W/L</th><th class='r'>获利 (净 / 毛 · 费)</th><th class='r'>开仓价</th><th class='r'>平仓价</th><th class='r'>张数</th><th class='r'>开仓 → 平仓 (北京)</th></tr></thead><tbody class="trade"><tr class="main"><td><span class="pair">XAU/USDT</span></td><td>Long</td><td>Still Open</td><td class="r pnl">—<span class="sub2">已实现 · 毛 — · 费 -0.0065</span></td><td class="r">4352.766667</td><td class="r">—</td><td class="r">3</td><td class="r dim">09-21 20:27 → 09-21 20:27</td></tr></tbody></table></div></section>
+<script>
+document.addEventListener('click', function (e) {
+  var tr = e.target.closest('tr.main');
+  if (!tr) return;
+  var tb = tr.closest('tbody.trade');
+  if (!tb || !tb.querySelector('tr.sub')) return;
+  tb.classList.toggle('open');
+});
+</script>
+</body></html>
